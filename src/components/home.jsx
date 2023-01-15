@@ -22,11 +22,14 @@ useEffect(()=>{
 
     return(
         <div className="flex flex-row justify-between bg-black  h-screen w-full  text-white ">
-           <div className=" h-1/2 w-1/2 min-h-0   bg-yellow-400 m-10 rounded-2xl ">
+           <div className=" h-1/2 w-1/2 min-h-0  overflow-scroll scrollbar-none  bg-yellow-400 m-10 rounded-2xl ">
            {items.length > 0 ?
     items.map((item,index)=>(
-        <div key={item.index} className="grid grid-cols-3   w-full">
-            <h4  >{item.text}</h4><br/>
+        <div key={item.index} className="grid grid-cols-3 gap-2   w-full mt-3 rounded-lg bg-slate-400 p-2">
+            <h4  >Description: {item.text}</h4><br/>
+            <h3>id: {item._id}</h3>
+            <h3>updatedAt : {item.updatedAt}</h3>
+            <h3>Deleted : {item.deleted}</h3>
         </div>
         
     ))
